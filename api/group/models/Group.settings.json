@@ -1,0 +1,51 @@
+{
+  "identity": "group",
+  "connection": "default",
+  "defaultTemplate": "default",
+  "displayedAttribute": "",
+  "schema": true,
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string",
+      "required": true
+    },
+    "template": {
+      "type": "string",
+      "required": true
+    },
+    "id_ref": {
+      "type": "int"
+    },
+    "createdBy": {
+      "model": "user"
+    },
+    "contributors": {
+      "collection": "user",
+      "via": "groups"
+    },
+    "receipt": {
+      "collection": "receipt",
+      "via": "group"
+    },
+    "debts": {
+      "collection": "debt",
+      "via": "group"
+    }
+  },
+  "autoCreatedAt": true,
+  "autoUpdatedAt": true,
+  "migrate": "alter",
+  "templates": {
+    "default": {
+      "attributes": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "displayedAttribute": "name"
+    }
+  }
+}

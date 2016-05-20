@@ -1,0 +1,57 @@
+{
+  "routes": {
+    "GET /receipt": {
+      "controller": "Receipt",
+      "action": "find",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "GET /receipt/:id": {
+      "controller": "Receipt",
+      "action": "findOne",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "POST /receipt": {
+      "controller": "Receipt",
+      "action": "create",
+      "policies": [
+        "isAuthorized",
+        "addDataCreate"
+      ]
+    },
+    "PUT /receipt/:id": {
+      "controller": "Receipt",
+      "action": "update",
+      "policies": [
+        "isAuthorized",
+        "addDataUpdate"
+      ]
+    },
+    "DELETE /receipt/:id": {
+      "controller": "Receipt",
+      "action": "destroy",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "POST /receipt/:parentId/:relation": {
+      "controller": "Receipt",
+      "action": "add",
+      "policies": [
+        "isAuthorized",
+        "addDataCreate"
+      ]
+    },
+    "DELETE /receipt/:parentId/:relation/:id": {
+      "controller": "Receipt",
+      "action": "remove",
+      "policies": [
+        "isAuthorized",
+        "addDataUpdate"
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "default": {
+    "attributes": {
+      "amount": {
+        "required": true
+      },
+      "status": {
+        "required": true
+      }
+    },
+    "displayedAttribute": "status"
+  }
+}

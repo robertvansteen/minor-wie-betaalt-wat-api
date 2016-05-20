@@ -1,0 +1,54 @@
+{
+  "identity": "debt",
+  "connection": "default",
+  "defaultTemplate": "default",
+  "displayedAttribute": "",
+  "schema": true,
+  "attributes": {
+    "amount": {
+      "type": "float"
+    },
+    "status": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string",
+      "required": true
+    },
+    "template": {
+      "type": "string",
+      "required": true
+    },
+    "id_ref": {
+      "type": "int"
+    },
+    "debtor": {
+      "model": "user"
+    },
+    "creditor": {
+      "model": "user"
+    },
+    "receipt": {
+      "model": "receipt"
+    },
+    "group": {
+      "model": "group"
+    }
+  },
+  "autoCreatedAt": true,
+  "autoUpdatedAt": true,
+  "migrate": "alter",
+  "templates": {
+    "default": {
+      "attributes": {
+        "amount": {
+          "type": "float"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "displayedAttribute": "status"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "routes": {
+    "GET /debt": {
+      "controller": "Debt",
+      "action": "find",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "GET /debt/:id": {
+      "controller": "Debt",
+      "action": "findOne",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "POST /debt": {
+      "controller": "Debt",
+      "action": "create",
+      "policies": [
+        "isAuthorized",
+        "addDataCreate"
+      ]
+    },
+    "PUT /debt/:id": {
+      "controller": "Debt",
+      "action": "update",
+      "policies": [
+        "isAuthorized",
+        "addDataUpdate"
+      ]
+    },
+    "DELETE /debt/:id": {
+      "controller": "Debt",
+      "action": "destroy",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "POST /debt/:parentId/:relation": {
+      "controller": "Debt",
+      "action": "add",
+      "policies": [
+        "isAuthorized",
+        "addDataCreate"
+      ]
+    },
+    "DELETE /debt/:parentId/:relation/:id": {
+      "controller": "Debt",
+      "action": "remove",
+      "policies": [
+        "isAuthorized",
+        "addDataUpdate"
+      ]
+    }
+  }
+}
